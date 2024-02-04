@@ -1,3 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  *,
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html,
+  body {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #131222;
+  }
+
+  h1 {
+    @apply text-[22px] sm:text-[26px] md:text-[34px] lg:text-[42px] xl:text-[50px] text-turquoise font-first font-black leading-[1.1];
+  }
+  h2 {
+    @apply text-[20px] sm:text-[22px] md:text-[28px] lg:text-[35px] text-alice font-second font-semibold;
+  }
+  h3 {
+    @apply text-[18px] sm:text-[20px] md:text-[24px] lg:text-[30px] text-turquoise font-second font-semibold;
+  }
+  h4 {
+    @apply lg:text-[24px] text-alice font-second font-semibold;
+  }
+  h5 {
+    @apply lg:text-[22px] text-alice font-second font-semibold;
+  }
+  h6 {
+    @apply text-[16px] lg:text-[21px] text-alice font-first font-normal;
+  }
+  a {
+    @apply text-[18px] lg:text-[20px] text-alice hover:text-turquoise duration-500 font-first font-semibold;
+  }
+  p {
+    @apply text-[14px] md:text-[16px] text-alice font-first font-normal;
+  }
+}
+
+@layer components {
+  .title {
+    @apply text-[28px] sm:text-[34px] md:text-[44px] lg:text-[54px] xl:text-[64px] text-alice font-second font-bold leading-[1.2];
+  }
+}
