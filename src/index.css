@@ -11,6 +11,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    user-select: none;
   }
   html,
   body {
@@ -38,10 +39,13 @@
     @apply text-[16px] lg:text-[21px] text-alice font-first font-normal;
   }
   a {
-    @apply text-[18px] lg:text-[20px] text-alice hover:text-turquoise duration-500 font-first font-semibold;
+    @apply text-[16px] sm:text-[18px] lg:text-[20px] text-alice hover:text-turquoise duration-500 font-first font-semibold;
   }
   p {
     @apply text-[14px] md:text-[16px] text-alice font-first font-normal;
+  }
+  header {
+    @apply bg-cadet drop-shadow-[0px_1px_4px_rgba(0,0,0,0.5)] md:drop-shadow-[0px_2px_3px_rgba(0,0,0,0.5)] w-full fixed top-0 py-3 md:py-4;
   }
 }
 

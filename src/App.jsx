@@ -1,9 +1,13 @@
 import { Fragment } from 'react';
+import Header from './components/global/Header';
+import Home from './components/Home';
 
 function App() {
   return (
     <Fragment>
-      <span className="title">Cyber Currency Center</span>
+      <Header />
+      <Home />
+      {/* <span className="title">Cyber Currency Center</span>
       <h1>Discover the most famous cyber economy systems</h1>
       <h2>Explore the Digital Market</h2>
       <h3>Cryptocurrencies in the Digital Financial Market</h3>
@@ -19,7 +23,7 @@ function App() {
         for secure transactions, operating on a decentralized network called
         blockchain. Examples include Bitcoin and Ethereum, providing security
         and transparency.
-      </p>
+      </p> */}
     </Fragment>
   );
 }
