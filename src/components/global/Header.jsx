@@ -40,18 +40,18 @@ const Header = () => {
         </div>
       </div>
       <div
-        className={
+        className={`w-full flex justify-center md:hidden ${
           changeNav
-            ? 'w-full flex justify-center md:hidden my-12 transition-max-height ease-in-out duration-700 h-auto'
-            : 'h-0 my-0 ease-in-out duration-500'
-        }
+            ? 'h-auto my-12 transition-all ease-in-out duration-700'
+            : 'h-0 my-0 ease-in-out duration-700'
+        }`}
       >
         <nav
-          className={
+          className={`flex flex-col gap-y-5 items-center ${
             changeNav
-              ? 'flex flex-col gap-y-5 items-center ease-linear duration-1000'
-              : 'h-0 opacity-0'
-          }
+              ? 'ease-in-out duration-700'
+              : 'flex flex-col gap-y-5 items-center h-0 opacity-0'
+          }`}
         >
           <a href="">Home</a>
           <a href="">About</a>

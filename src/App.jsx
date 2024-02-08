@@ -7,7 +7,7 @@ function App() {
     <Fragment>
       <Header />
       <Home />
-      {/* <span className="title">Cyber Currency Center</span>
+      {/* 
       <h1>Discover the most famous cyber economy systems</h1>
       <h2>Explore the Digital Market</h2>
       <h3>Cryptocurrencies in the Digital Financial Market</h3>
