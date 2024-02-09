@@ -30,7 +30,7 @@
     @apply text-[18px] sm:text-[20px] md:text-[24px] lg:text-[30px] text-turquoise font-second font-semibold;
   }
   h4 {
-    @apply lg:text-[24px] text-alice font-second font-semibold;
+    @apply sm:text-[18px] md:text-[20px] lg:text-[24px] text-alice font-second font-semibold;
   }
   h5 {
     @apply lg:text-[22px] text-alice font-second font-semibold;

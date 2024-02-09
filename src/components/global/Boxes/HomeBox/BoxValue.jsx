@@ -1,11 +1,11 @@
 import React from 'react';
 
-const BoxName = ({ name }) => {
+const BoxValue = ({ value }) => {
   return (
     <span className="no-select text-[16px] sm:text-[18px] lg:text-[20px] text-turquoise font-first">
-      {name}
+      {value}
     </span>
   );
 };
 
-export default BoxName;
+export default BoxValue;

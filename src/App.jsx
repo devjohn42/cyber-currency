@@ -1,11 +1,14 @@
 import { Fragment } from 'react';
 import Header from './components/global/Header';
 import Home from './components/Home';
+import About from './components/About';
 
 function App() {
   return (
     <Fragment>
       <Header />
+      <Home />
+      <About />
       <Home />
       {/* 
       <h1>Discover the most famous cyber economy systems</h1>

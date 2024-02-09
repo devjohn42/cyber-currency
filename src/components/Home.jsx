@@ -1,6 +1,6 @@
 import React from 'react';
-import Box from './global/Box/Box';
-import BoxName from './global/Box/BoxName';
+import Box from './global/Boxes/HomeBox/Box';
+import BoxValue from './global/Boxes/HomeBox/BoxValue';
 
 const Home = () => {
   return (
@@ -20,7 +20,7 @@ const Home = () => {
           beforeWidth={'before:w-[70%]'}
           afterHeight={'after:h-[60%]'}
         >
-          <BoxName name={'Cryptocurrency'} />
+          <BoxValue value={'Cryptocurrency'} />
         </Box>
         <Box
           cursor={'cursor-auto'}
@@ -28,7 +28,7 @@ const Home = () => {
           beforeWidth={'before:w-[70%]'}
           afterHeight={'after:h-[60%]'}
         >
-          <BoxName name={'Blockchain'} />
+          <BoxValue value={'Blockchain'} />
         </Box>
         <Box
           cursor={'cursor-auto'}
@@ -36,7 +36,7 @@ const Home = () => {
           beforeWidth={'before:w-[70%]'}
           afterHeight={'after:h-[60%]'}
         >
-          <BoxName name={'NFT´s'} />
+          <BoxValue value={'NFT´s'} />
         </Box>
       </div>
     </section>
