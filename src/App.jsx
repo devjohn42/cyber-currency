@@ -11,6 +11,7 @@ function App() {
       <Home />
       <About />
       <Market />
+      <Home />
       {/* 
       <h1>Discover the most famous cyber economy systems</h1>
       <h2>Explore the Digital Market</h2>
