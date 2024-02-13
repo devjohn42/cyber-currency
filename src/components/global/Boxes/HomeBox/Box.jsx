@@ -2,7 +2,7 @@ import React from 'react';
 
 const Box = ({ children, cursor, border, beforeWidth, afterHeight }) => {
   return (
-    <button
+    <div
       className={`
       w-[150px] h-[50px] 
       sm:w-[220px] sm:h-[60px]
@@ -19,7 +19,7 @@ const Box = ({ children, cursor, border, beforeWidth, afterHeight }) => {
       ${border} border-turquoise`}
     >
       {children}
-    </button>
+    </div>
   );
 };
 

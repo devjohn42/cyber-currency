@@ -2,6 +2,7 @@ import { Fragment } from 'react';
 import Header from './components/global/Header';
 import Home from './components/Home';
 import About from './components/About';
+import Market from './components/Market';
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
       <Header />
       <Home />
       <About />
-      <Home />
+      <Market />
       {/* 
       <h1>Discover the most famous cyber economy systems</h1>
       <h2>Explore the Digital Market</h2>
