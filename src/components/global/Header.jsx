@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaCoins } from 'react-icons/fa6';
 import { MdOutlineApps, MdClose } from 'react-icons/md';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
   const [changeNav, setChangeNav] = useState(false);
@@ -36,7 +37,9 @@ const Header = () => {
           </nav>
         </div>
         <div className="w-[70px] flex justify-center">
-          <FaCoins className="text-turquoise text-[1.8rem] lg:text-[2rem] md:hover:animate-pulse md:cursor-pointer" />
+          <NavLink to={"/crypto-stats"}>
+            <FaCoins className="text-turquoise text-[1.8rem] lg:text-[2rem] md:hover:animate-pulse md:cursor-pointer" />
+          </NavLink>
         </div>
       </div>
       <div

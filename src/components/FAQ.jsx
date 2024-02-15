@@ -5,7 +5,7 @@ import { faqDATABASE } from '../data/faq';
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);
   const toggleAccordion = (index) => {
-    setOpenIndex(index);
+    setOpenIndex(openIndex === index ? null : index);
   };
   return (
     <section className="w-full py-12 flex flex-col gap-y-10 items-center">
