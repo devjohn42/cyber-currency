@@ -1,5 +1,7 @@
 import React from 'react';
-import BoxSocial from './global/Boxes/AboutBoxes/BoxSocial';
+import BoxSocial from './global/Boxes/AboutBox/BoxSocial';
+import BoxCurrencyKnows from './global/Boxes/AboutBox/BoxCurrencyKnows';
+import DevLink from './global/DevLink';
 import {
   FaDiscord,
   FaInstagram,
@@ -7,8 +9,6 @@ import {
   FaTwitch,
   FaXTwitter,
 } from 'react-icons/fa6';
-import BoxCurrencyKnows from './global/Boxes/AboutBoxes/BoxCurrencyKnows';
-import DevLink from './global/DevLink';
 
 const About = () => {
   return (

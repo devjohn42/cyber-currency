@@ -3,6 +3,7 @@ import Header from './components/global/Header';
 import Home from './components/Home';
 import About from './components/About';
 import Market from './components/Market';
+import Currency from './components/Currency';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Home />
       <About />
       <Market />
+      <Currency />
       <Home />
       {/* 
       <h1>Discover the most famous cyber economy systems</h1>

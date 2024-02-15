@@ -12,11 +12,11 @@ const BoxMarket = ({
   return (
     <div
       className={`
-      w-[90%] h-[170px]
+      w-[90%] h-[180px]
       lg:w-[840px] lg:h-[150px]
       flex flex-col items-center justify-center relative z-0 duration-1000 ${cursor}
       before:absolute before:bg-raisin before:-z-10 before:duration-500 before:content-[''] 
-      before:h-[170px] before:lg:h-[150px] ${beforeWidth}
+      before:h-[180px] before:lg:h-[150px] ${beforeWidth}
       after:absolute after:bg-raisin after:-z-10 after:duration-500 after:content-[''] 
       after:w-[100.5%] after:lg:w-[840px] ${afterHeight}
       hover:bg-cadet

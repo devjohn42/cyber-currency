@@ -1,6 +1,6 @@
 import React from 'react';
-import BoxMarket from './global/Boxes/MarketBoxes/BoxMarket';
-import { marketDATABASE } from './data/market';
+import BoxMarket from './global/Boxes/MarketBoxe/BoxMarket.jsx';
+import { marketDATABASE } from '../data/market.js';
 
 const Market = () => {
   return (
@@ -14,16 +14,17 @@ const Market = () => {
         </h6>
       </div>
       <div className="w-full flex flex-col gap-y-20">
-        {marketDATABASE.map((currencySection) => {
+        {marketDATABASE.map((currencySection, index) => {
           return (
-            <div className="flex flex-col items-center gap-y-12">
-              <h3 className="text-turquoise w-[80%] text-center">
+            <div key={index} className=" flex flex-col items-center gap-y-12">
+              <h3 className="text-turquoise w-[90%] lg:w-[840px] text-center">
                 {currencySection.currencyTitle}
               </h3>
               <div className="flex flex-col items-center gap-y-8">
                 {currencySection.box.map((box, index) => {
                   return (
                     <BoxMarket
+                      key={index}
                       title={box.boxTitle}
                       description={box.boxDescription}
                       number={index + 1}
