@@ -5,6 +5,7 @@ import DevLink from './global/DevLink';
 import {
   FaDiscord,
   FaInstagram,
+  FaReddit,
   FaTelegram,
   FaTwitch,
   FaXTwitter,
@@ -25,6 +26,7 @@ const About = () => {
         <div className="flex gap-x-3 sm:gap-x-5 md:gap-x-7">
           <DevLink>
             <BoxSocial
+              translate={'hover:md:-translate-y-1'}
               border={'border-[1px] sm:border-[2px]'}
               beforeWidth={'before:w-[70%]'}
               afterHeight={'after:h-[60%]'}
@@ -34,6 +36,7 @@ const About = () => {
           </DevLink>
           <DevLink>
             <BoxSocial
+              translate={'hover:md:-translate-y-1'}
               border={'border-[1px] sm:border-[2px]'}
               beforeWidth={'before:w-[70%]'}
               afterHeight={'after:h-[60%]'}
@@ -43,6 +46,7 @@ const About = () => {
           </DevLink>
           <DevLink>
             <BoxSocial
+              translate={'hover:md:-translate-y-1'}
               border={'border-[1px] sm:border-[2px]'}
               beforeWidth={'before:w-[70%]'}
               afterHeight={'after:h-[60%]'}
@@ -52,6 +56,17 @@ const About = () => {
           </DevLink>
           <DevLink>
             <BoxSocial
+              translate={'hover:md:-translate-y-1'}
+              border={'border-[1px] sm:border-[2px]'}
+              beforeWidth={'before:w-[70%]'}
+              afterHeight={'after:h-[60%]'}
+            >
+              <FaReddit className="text-[1.75rem] text-turquoise" />
+            </BoxSocial>
+          </DevLink>
+          <DevLink>
+            <BoxSocial
+              translate={'hover:md:-translate-y-1'}
               cursor={'cursor-auto'}
               border={'border-[1px] sm:border-[2px]'}
               beforeWidth={'before:w-[70%]'}
@@ -62,6 +77,7 @@ const About = () => {
           </DevLink>
           <DevLink>
             <BoxSocial
+              translate={'hover:md:-translate-y-1'}
               cursor={'cursor-auto'}
               border={'border-[1px] sm:border-[2px]'}
               beforeWidth={'before:w-[70%]'}

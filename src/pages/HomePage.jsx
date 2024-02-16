@@ -5,6 +5,7 @@ import About from '../components/About';
 import Market from '../components/Market';
 import Currency from '../components/Currency';
 import FAQ from '../components/FAQ';
+import Footer from '../components/global/Footer';
 
 const HomePage = () => {
   return (
@@ -15,6 +16,7 @@ const HomePage = () => {
       <Market />
       <Currency />
       <FAQ />
+      <Footer />
     </>
   );
 };
