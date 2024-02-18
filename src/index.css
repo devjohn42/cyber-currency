@@ -11,6 +11,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
   }
   html,
@@ -18,6 +23,7 @@
     min-height: 100vh;
     width: 100%;
     background-color: #131222;
+    font-size: 16px;
   }
 
   h1 {
@@ -39,26 +45,94 @@
     @apply text-[16px] lg:text-[18px] text-alice font-first font-normal;
   }
   a {
-    @apply text-[16px] sm:text-[18px] lg:text-[20px] text-alice hover:text-turquoise duration-500 font-first font-semibold;
+    text-decoration: none;
   }
   p {
     @apply text-[14px] md:text-[16px] text-alice font-first font-normal;
   }
   header {
-    @apply bg-cadet drop-shadow-[0px_1px_4px_rgba(0,0,0,0.5)] md:drop-shadow-[0px_2px_3px_rgba(0,0,0,0.5)] w-full fixed top-0 py-3 md:py-4 z-50;
+    @apply bg-cadet drop-shadow-[0px_3px_8px_rgba(0,0,0,1)] md:drop-shadow-[0px_1px_4px_rgba(0,0,0,1)] w-full fixed top-0 py-3 md:py-4 z-50;
   }
-  .no-select {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  footer {
+    @apply bg-cadet drop-shadow-[0px_3px_8px_rgba(0,0,0,1)] md:drop-shadow-[0px_1px_4px_rgba(0,0,0,1)] w-full flex flex-col gap-y-8 items-center py-4;
   }
 }
 
 @layer components {
+  /*GLOBAL COMPONENTS*/
+  .crypto-stats-icon {
+    @apply text-turquoise text-[1.8rem] lg:text-[2rem];
+  }
+  .social-icon {
+    @apply text-[1.5rem] sm:text-[1.75rem] text-turquoise;
+  }
+  /*GLOBAL COMPONENTS*/
+
+  .header-nav-link {
+    @apply text-[16px] sm:text-[18px] lg:text-[20px] text-alice hover:text-turquoise duration-500 font-first font-semibold;
+  }
+  .home-section {
+    @apply w-full min-h-screen flex flex-col gap-y-8 md:gap-y-16 items-center justify-center;
+  }
   .title {
     @apply sm:text-[44px] md:text-[54px] lg:text-[64px] xl:text-[80px] text-center text-alice font-second font-bold leading-[1.2];
   }
+
+  .about-section {
+    @apply w-full min-h-screen flex flex-col gap-y-10 items-center justify-center lg:flex-row lg:justify-around;
+  }
+  .about-content {
+    @apply w-[90%] lg:w-[530px] text-justify flex flex-col items-start gap-y-3 md:gap-y-5;
+  }
+  .error-section {
+    @apply min-h-screen flex flex-col gap-y-5 items-center justify-center;
+  }
+  .error-number {
+    @apply text-[80px] sm:text-[120px] md:text-[160px] leading-[100%] font-second font-semibold;
+  }
+  .error-description {
+    @apply text-center text-alice w-[90%] md:w-[768px] font-first font-normal text-[16px] sm:text-[20px] leading-[100%];
+  }
+  .error-nav-button {
+    @apply border-[2px] hover:rounded-[0.5rem] border-turquoise lg:hover:bg-cadet duration-500 cursor-pointer p-[0.5rem_1rem];
+  }
+
+  /*CRYPTO-STATS COMPONENTS*/
+  .cs-h1 {
+    @apply text-[1.5rem] sm:text-[2rem] font-semibold text-alice;
+  }
+  .cs-h2 {
+    @apply text-[24px] sm:text-[26px] md:text-[32px] lg:text-[38px] text-turquoise text-center font-first font-medium;
+  }
+  .cs-h3 {
+    @apply text-[20px] sm:text-[26px] md:text-[32px] text-alice font-semibold;
+  }
+  .cs-h4 {
+    @apply text-[1rem] sm:text-[18px] md:text-[20px] text-alice font-first font-medium;
+  }
+  .cs-p {
+    @apply text-[14px] sm:text-[1rem] md:text-[1.05rem] text-alice font-first font-normal;
+  }
+  .border {
+    @apply border-[1px] border-[#9696962f] shadow-[0px_0px_12px_#000000cc];
+  }
+  .coin-item-content {
+    @apply flex items-center justify-between bg-cadet border rounded-[0.5rem] m-[2rem_1rem] p-[0.7rem_1rem] duration-300 ease-in-out hover:lg:scale-[1.04] hover:lg:cursor-pointer;
+  }
+  .coin-info-rank {
+    @apply flex items-center w-fit text-alice p-[0.5rem] rounded-[0.5rem] border-[1px] border-turquoise bg-space shadow-[0px_0px_6px_#000000cc];
+  }
+  .coin-info-container {
+    @apply w-full lg:max-w-[740px] m-[0.5rem] lg:m-[1rem_auto] p-[0.7rem_0.5rem] lg:p-[0.7rem_1rem] flex flex-col bg-cadet border rounded-[0.5rem];
+  }
+  .percentage-container-th {
+    @apply p-[5px] lg:p-2 text-center bg-space text-alice;
+  }
+  .percentage-container-td {
+    @apply p-[5px] lg:p-2 text-center bg-raisin text-alice;
+  }
+  .amount-container-content {
+    @apply flex sm:flex-col items-start md:flex-row md:items-center justify-between border-b-[1px] border-b-[#e3edf7] m-[1rem_0.5rem] pb-[0.5rem];
+  }
+  /*CRYPTO-STATS COMPONENTS*/
 }

@@ -13,12 +13,12 @@ const BoxCurrencyKnows = ({
       className={`
       w-[90%] h-[170px]
       lg:w-[450px]
+      bg-cadet
       flex flex-col items-center justify-center relative z-0 duration-1000 ${cursor}
-      before:absolute before:bg-space before:-z-10 before:duration-500 before:content-[''] 
+      before:absolute before:bg-cadet before:-z-10 before:duration-500 before:content-[''] 
       before:h-[170px] ${beforeWidth}
-      after:absolute after:bg-space after:-z-10 after:duration-500 after:content-[''] 
+      after:absolute after:bg-cadet after:-z-10 after:duration-500 after:content-[''] 
       after:w-[100.5%] after:lg:w-[450px] ${afterHeight}
-      hover:bg-raisin
       hover:before:w-[0px]
       hover:after:h-[0px]
       ${border} border-turquoise`}

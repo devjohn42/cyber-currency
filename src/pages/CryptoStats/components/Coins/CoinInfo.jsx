@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import DOMPurify from 'dompurify';
 import Header from '../Header';
+import Footer from '../Footer';
 
 const CoinInfo = () => {
   const params = useParams();
@@ -23,34 +24,36 @@ const CoinInfo = () => {
   return (
     <>
       <Header />
-      <section className="w-full mt-24 lg:mt-28 flex flex-col items-center justify-center">
+      <section className="w-full mt-24 mb-12 lg:mt-28 flex flex-col items-center justify-center">
         <div className="w-[90%] flex flex-col items-center justify-center">
-          <div className="w-full lg:max-w-[740px] m-[0.5rem] lg:m-[1rem_auto] p-[0.7rem_0.5rem] lg:p-[0.7rem_1rem] flex flex-col bg-cadet shadow-[0px_0px_12px_rgb(24, 25, 27)] rounded-[0.5rem]">
-            <span className="text-alice text-center font-first font-bold text-[20px] sm:text-[26px] md:text-[32px] lg:text-[38px]">
-              {coinInfo.name}
-            </span>
+          <div className="coin-info-container">
+            <span className="cs-h2">{coinInfo.name}</span>
           </div>
-          <div className="w-full lg:max-w-[740px] m-[0.5rem] lg:m-[1rem_auto] p-[0.7rem_0.5rem] lg:p-[0.7rem_1rem] flex flex-col bg-cadet shadow-[0px_0px_12px_rgb(24, 25, 27)] rounded-[0.5rem]">
+          <div className="coin-info-container">
             <div className="m-[0.5rem_0rem]">
-              <span className="flex items-center w-fit text-alice p-[0.3rem_0.5rem] rounded-[0.5rem] border-[2px] border-solid border-alice bg-raisin shadow-[0px_0px_8px_rgb(24, 25, 27)]">
+              <span className="coin-info-rank">
                 Rank # {coinInfo.market_cap_rank}
               </span>
             </div>
             <div className="flex items-center justify-between">
               <div className="flex gap-x-3 items-center m-[1rem_0rem]">
                 {coinInfo.image ? (
-                  <img src={coinInfo.image.small} alt="" />
+                  <img
+                    className="w-[35px] sm:w-[40px]"
+                    src={coinInfo.image.small}
+                    alt=""
+                  />
                 ) : null}
-                <p className="pr-[1rem]">{coinInfo.name}</p>
+                <span className="cs-h4">{coinInfo.name}</span>
                 {coinInfo.symbol ? (
-                  <p className="pr-[1rem]">
+                  <span className="cs-h4">
                     {coinInfo.symbol.toUpperCase()}/USD
-                  </p>
+                  </span>
                 ) : null}
               </div>
               <div className="flex items-center justify-center">
                 {coinInfo.market_data?.current_price ? (
-                  <h1 className="text-alice text-[20px] sm:text-[26px] md:text-[32px] lg:text-[38px]">
+                  <span className="cs-h3">
                     {coinInfo.market_data.current_price.usd.toLocaleString(
                       'en-US',
                       {
@@ -58,38 +61,26 @@ const CoinInfo = () => {
                         currency: 'USD',
                       }
                     )}
-                  </h1>
+                  </span>
                 ) : null}
               </div>
             </div>
           </div>
-          <div className="w-full lg:max-w-[740px] m-[0.5rem] lg:m-[1rem_auto] p-[0.7rem_0.5rem] lg:p-[0.7rem_1rem] flex flex-col bg-cadet shadow-[0px_0px_12px_rgb(24, 25, 27)] rounded-[0.5rem]">
-            <table className="m-[0.5rem_0rem]">
+          <div className="coin-info-container">
+            <table className="m-[0.5rem_0rem] ">
               <thead>
                 <tr>
-                  <th className="p-[5px] lg:p-2 text-center bg-space text-alice">
-                    1h
-                  </th>
-                  <th className="p-[5px] lg:p-2 text-center bg-space text-alice">
-                    24h
-                  </th>
-                  <th className="p-[5px] lg:p-2 text-center bg-space text-alice">
-                    7d
-                  </th>
-                  <th className="p-[5px] lg:p-2 text-center bg-space text-alice">
-                    14d
-                  </th>
-                  <th className="p-[5px] lg:p-2 text-center bg-space text-alice">
-                    30d
-                  </th>
-                  <th className="p-[5px] lg:p-2 text-center bg-space text-alice">
-                    1yr
-                  </th>
+                  <th className="percentage-container-th">1h</th>
+                  <th className="percentage-container-th">24h</th>
+                  <th className="percentage-container-th">7d</th>
+                  <th className="percentage-container-th">14d</th>
+                  <th className="percentage-container-th">30d</th>
+                  <th className="percentage-container-th">1yr</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td className="p-[5px] lg:p-2 text-center bg-raisin text-alice">
+                  <td className="percentage-container-td">
                     {coinInfo.market_data
                       ?.price_change_percentage_1h_in_currency ? (
                       <p>
@@ -100,7 +91,7 @@ const CoinInfo = () => {
                       </p>
                     ) : null}
                   </td>
-                  <td className="p-[5px] lg:p-2 text-center bg-raisin text-alice">
+                  <td className="percentage-container-td">
                     {coinInfo.market_data
                       ?.price_change_percentage_24h_in_currency ? (
                       <p>
@@ -111,7 +102,7 @@ const CoinInfo = () => {
                       </p>
                     ) : null}
                   </td>
-                  <td className="p-[5px] lg:p-2 text-center bg-raisin text-alice">
+                  <td className="percentage-container-td">
                     {coinInfo.market_data
                       ?.price_change_percentage_7d_in_currency ? (
                       <p>
@@ -122,7 +113,7 @@ const CoinInfo = () => {
                       </p>
                     ) : null}
                   </td>
-                  <td className="p-[5px] lg:p-2 text-center bg-raisin text-alice">
+                  <td className="percentage-container-td">
                     {coinInfo.market_data
                       ?.price_change_percentage_14d_in_currency ? (
                       <p>
@@ -133,7 +124,7 @@ const CoinInfo = () => {
                       </p>
                     ) : null}
                   </td>
-                  <td className="p-[5px] lg:p-2 text-center bg-raisin text-alice">
+                  <td className="percentage-container-td">
                     {coinInfo.market_data
                       ?.price_change_percentage_30d_in_currency ? (
                       <p>
@@ -144,7 +135,7 @@ const CoinInfo = () => {
                       </p>
                     ) : null}
                   </td>
-                  <td className="p-[5px] lg:p-2 text-center bg-raisin text-alice">
+                  <td className="percentage-container-td">
                     {coinInfo.market_data
                       ?.price_change_percentage_1y_in_currency ? (
                       <p>
@@ -159,13 +150,13 @@ const CoinInfo = () => {
               </tbody>
             </table>
           </div>
-          <div className="w-full lg:max-w-[740px] m-[0.5rem] lg:m-[1rem_auto] p-[0.7rem_0.5rem] lg:p-[0.7rem_1rem] flex flex-col bg-cadet shadow-[0px_0px_12px_rgb(24, 25, 27)] rounded-[0.5rem]">
-            <div className="w-full grid grid-cols-2 gap-[2rem]">
-              <div className="left">
-                <div className="flex flex-col items-left md:flex-row md:items-center justify-between border-b-[1px] border-b-solid border-b-[#e3edf7] m-[1rem_0.5rem] pb-[0.5rem]">
-                  <h5 className="font-first">24 Hour Low</h5>
+          <div className="coin-info-container">
+            <div className="w-full flex flex-col sm:flex-row justify-between gap-[2rem]">
+              <div className="w-full sm:w-[50%]">
+                <div className="amount-container-content">
+                  <span className="cs-h4">24 Hour Low</span>
                   {coinInfo.market_data?.low_24h ? (
-                    <p>
+                    <p className="cs-p">
                       {coinInfo.market_data.low_24h.usd.toLocaleString(
                         'en-US',
                         {
@@ -176,10 +167,10 @@ const CoinInfo = () => {
                     </p>
                   ) : null}
                 </div>
-                <div className="flex flex-col items-left md:flex-row md:items-center justify-between border-b-[1px] border-b-solid border-b-[#e3edf7] m-[1rem_0.5rem] pb-[0.5rem]">
-                  <h5 className="font-first">24 Hour High</h5>
+                <div className="amount-container-content">
+                  <span className="cs-h4">24 Hour High</span>
                   {coinInfo.market_data?.high_24h ? (
-                    <p>
+                    <p className="cs-p">
                       {coinInfo.market_data.high_24h.usd.toLocaleString(
                         'en-US',
                         {
@@ -191,11 +182,11 @@ const CoinInfo = () => {
                   ) : null}
                 </div>
               </div>
-              <div className="right">
-                <div className="flex flex-col items-left md:flex-row md:items-center justify-between border-b-[1px] border-b-solid border-b-[#e3edf7] m-[1rem_0.5rem] pb-[0.5rem]">
-                  <h5 className="font-first">Market Cap</h5>
+              <div className="w-full sm:w-[50%]">
+                <div className="amount-container-content">
+                  <span className="cs-h4">Market Cap</span>
                   {coinInfo.market_data?.market_cap ? (
-                    <p>
+                    <p className="cs-p">
                       {coinInfo.market_data.market_cap.usd.toLocaleString(
                         'en-US',
                         {
@@ -206,19 +197,22 @@ const CoinInfo = () => {
                     </p>
                   ) : null}
                 </div>
-                <div className="flex flex-col items-left md:flex-row md:items-center justify-between border-b-[1px] border-b-solid border-b-[#e3edf7] m-[1rem_0.5rem] pb-[0.5rem]">
-                  <h5 className="font-first">Circulating Supply</h5>
+                <div className="amount-container-content">
+                  <span className="cs-h4">Circulating Supply</span>
                   {coinInfo.market_data ? (
-                    <p>{coinInfo.market_data.circulating_supply}</p>
+                    <p className="cs-p">
+                      {coinInfo.market_data.circulating_supply}
+                    </p>
                   ) : null}
                 </div>
               </div>
             </div>
           </div>
-          <div className="w-full lg:max-w-[740px] m-[0.5rem] lg:m-[1rem_auto] p-[0.7rem_0.5rem] lg:p-[0.7rem_1rem] flex flex-col bg-cadet shadow-[0px_0px_12px_rgb(24, 25, 27)] rounded-[0.5rem]">
-            <div className="m-[1rem_0rem]">
-              <h3 className="m-[1rem_0rem] text-turquoise font-first">About</h3>
+          <div className="coin-info-container">
+            <div className="flex flex-col gap-y-2 items-start">
+              <span className="cs-h2">About</span>
               <p
+                className="cs-p"
                 dangerouslySetInnerHTML={{
                   __html: DOMPurify.sanitize(
                     coinInfo.description ? coinInfo.description.en : ''
@@ -229,6 +223,7 @@ const CoinInfo = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 };

@@ -1,6 +1,6 @@
 export const currencyDATABASE = [
   {
-    currencyTitle: 'Cryptocurrency Markets',
+    currencyTitle: 'Cryptocurrency',
     sliders: [
       {
         boxTitle: 'Binance',
@@ -30,7 +30,7 @@ export const currencyDATABASE = [
     ],
   },
   {
-    currencyTitle: 'Blockchain Markets',
+    currencyTitle: 'Blockchain',
     sliders: [
       {
         boxTitle: 'Ethereum',
@@ -60,7 +60,7 @@ export const currencyDATABASE = [
     ],
   },
   {
-    currencyTitle: 'NFT Markets',
+    currencyTitle: 'NFT´s (Non-Fungible Tokens)',
     sliders: [
       {
         boxTitle: 'OpenSea',

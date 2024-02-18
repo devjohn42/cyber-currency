@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import Header from './components/Header';
 import CoinItem from './components/Coins/CoinItem';
+import Footer from './components/Footer';
 
 const CryptoApp = () => {
   const [cryptos, setCryptos] = useState([]);
@@ -25,17 +26,17 @@ const CryptoApp = () => {
       });
   }, []);
   return (
-    <div>
+    <div className="min-h-screen">
       <Header />
-      <section className="max-w-[85%] m-auto">
+      <section className="mt-24 lg:mt-32 max-w-[85%] m-auto">
         <div>
-          <div className="mt-24 lg:mt-32 ml-4 mr-4 flex items-center justify-between bg-cadet shadow-[0px_0px_12px_rgb(24, 25, 27)] rounded-[0.5rem] p-[0.7rem_1rem] font-bold">
-            <p>#</p>
-            <p className="ml-[-4rem]">Coin</p>
-            <p>Price</p>
-            <p>24h</p>
-            <p className="hidden lg:flex">Volume</p>
-            <p className="hidden lg:flex">Mkt Cap</p>
+          <div className="ml-4 mr-4 coin-item-content pointer-events-none">
+            <p className="cs-p">#</p>
+            <p className="ml-[-4rem] cs-p">Coin</p>
+            <p className="cs-p">Price</p>
+            <p className="cs-p">24h</p>
+            <p className="hidden cs-p lg:flex">Volume</p>
+            <p className="hidden cs-p lg:flex">Mkt Cap</p>
           </div>
           {cryptos.map((coin) => {
             return (
@@ -46,6 +47,7 @@ const CryptoApp = () => {
           })}
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

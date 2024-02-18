@@ -8,7 +8,7 @@ const FAQ = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
   return (
-    <section className="w-full py-12 flex flex-col gap-y-10 items-center">
+    <section className="w-full min-h-screen py-12 flex flex-col gap-y-10 items-center">
       <div className="w-[90%] lg:w-[980px] flex flex-col items-start gap-y-3">
         <h4 className="text-turquoise font-second leading-[120%]">FAQ</h4>
         <h2 className="leading-[100%]">LOOKING FOR ANSWERS?</h2>

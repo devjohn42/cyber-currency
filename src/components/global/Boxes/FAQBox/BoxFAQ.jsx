@@ -32,7 +32,15 @@ const BoxFAQ = ({
     >
       <div className=" w-[95%] flex flex-col gap-y-1 items-start text-left">
         <h5 className="text-turquoise font-second font-semibold">{title}</h5>
-        {isOpen && <p>{description}</p>}
+        <p
+          className={`h-0 ${
+            isOpen
+              ? 'h-auto transform-opacity opacity-100 duration-700'
+              : 'opacity-0'
+          }`}
+        >
+          {description}
+        </p>
       </div>
       <MdKeyboardArrowUp
         className={`text-turquoise text-[1.5rem] sm:text-[1.75rem] lg:text-[2rem] absolute top-0 sm:top-2 right-0 sm:right-2 cursor-pointer ${

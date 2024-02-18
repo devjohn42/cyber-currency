@@ -29,16 +29,26 @@ const Header = () => {
 
         <div className="hidden md:flex">
           <nav className="flex flex-col md:flex-row md:gap-x-5">
-            <a href="">Home</a>
-            <a href="">About</a>
-            <a href="">Market</a>
-            <a href="">Currency</a>
-            <a href="">FAQ</a>
+            <a className="header-nav-link" href="">
+              Home
+            </a>
+            <a className="header-nav-link" href="">
+              About
+            </a>
+            <a className="header-nav-link" href="">
+              Market
+            </a>
+            <a className="header-nav-link" href="">
+              Currency
+            </a>
+            <a className="header-nav-link" href="">
+              FAQ
+            </a>
           </nav>
         </div>
         <div className="w-[70px] flex justify-center">
-          <NavLink to={"/crypto-stats"}>
-            <FaCoins className="text-turquoise text-[1.8rem] lg:text-[2rem] md:hover:animate-pulse md:cursor-pointer" />
+          <NavLink to={'/crypto-stats'}>
+            <FaCoins className="crypto-stats-icon md:hover:animate-pulse md:cursor-pointer" />
           </NavLink>
         </div>
       </div>
@@ -56,11 +66,21 @@ const Header = () => {
               : 'flex flex-col gap-y-5 items-center h-0 opacity-0'
           }`}
         >
-          <a href="">Home</a>
-          <a href="">About</a>
-          <a href="">Market</a>
-          <a href="">Currency</a>
-          <a href="">FAQ</a>
+          <a className="header-nav-link" href="">
+            Home
+          </a>
+          <a className="header-nav-link" href="">
+            About
+          </a>
+          <a className="header-nav-link" href="">
+            Market
+          </a>
+          <a className="header-nav-link" href="">
+            Currency
+          </a>
+          <a className="header-nav-link" href="">
+            FAQ
+          </a>
         </nav>
       </div>
     </header>

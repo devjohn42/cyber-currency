@@ -12,14 +12,16 @@ const BoxMarket = ({
   return (
     <div
       className={`
-      w-[90%] h-[180px]
+      w-[320px] h-[180px]
+      sm:w-[380px] sm:h-[200px]
+      md:w-[450px] 
       lg:w-[840px] lg:h-[150px]
+      bg-cadet p-2
       flex flex-col items-center justify-center relative z-0 duration-1000 ${cursor}
-      before:absolute before:bg-raisin before:-z-10 before:duration-500 before:content-[''] 
-      before:h-[180px] before:lg:h-[150px] ${beforeWidth}
-      after:absolute after:bg-raisin after:-z-10 after:duration-500 after:content-[''] 
-      after:w-[100.5%] after:lg:w-[840px] ${afterHeight}
-      hover:bg-cadet
+      before:absolute before:bg-cadet before:-z-10 before:duration-500 before:content-[''] 
+      before:h-[180px] before:sm:h-[200px] before:lg:h-[150px] ${beforeWidth}
+      after:absolute after:bg-cadet after:-z-10 after:duration-500 after:content-[''] 
+      after:w-[320px] after:sm:w-[380px] after:md:w-[450px] after:lg:w-[840px] ${afterHeight}
       hover:before:w-[0px]
       hover:after:h-[0px]
       ${border} border-turquoise`}
@@ -31,7 +33,7 @@ const BoxMarket = ({
         </p>
       </div>
       <div className="absolute top-0 w-full h-full text-alice/30 duration-500 hover:text-alice">
-        <span className="absolute right-3 bottom-0 text-[2.5rem] sm:text-[4rem] font-second font-semibold sm:font-black ">
+        <span className="absolute right-3 bottom-0 text-[2.25rem] sm:text-[2.75rem] md:text-[3rem] lg:text-[4rem] font-second font-semibold sm:font-black ">
           {number}
         </span>
       </div>
