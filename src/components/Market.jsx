@@ -4,9 +4,14 @@ import { marketDATABASE } from '../data/market.js';
 
 const Market = () => {
   return (
-    <section className="w-full min-h-screen flex flex-col items-center gap-y-16 py-12">
+    <section
+      className="w-full min-h-screen flex flex-col items-center gap-y-12 py-12"
+      id="market"
+    >
       <div className="w-full flex flex-col gap-y-2 items-center">
-        <h2 className="text-alice">Explore the Digital Market</h2>
+        <h2 className="w-[90%] text-center text-alice">
+          Explore the Digital Market
+        </h2>
         <h6 className="text-turquoise w-[80%] sm:w-[90%] lg:w-[750px] text-center">
           Cryptocurrencies for payments, the transparency of Blockchain, and the
           exclusivity of NFTs. A journey of innovation and opportunities awaits

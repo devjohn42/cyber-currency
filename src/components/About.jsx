@@ -8,7 +8,7 @@ import { currencyKnowsDATABASE } from '../data/currencyKnows';
 
 const About = () => {
   return (
-    <section className="about-section">
+    <section className="about-section" id="about">
       <div className="about-content">
         <h4 className="text-turquoise font-second leading-[120%]">ABOUT US</h4>
         <h2 className="leading-[100%]">WHAT WE DO?</h2>

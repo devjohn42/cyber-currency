@@ -6,7 +6,7 @@ import { currencyDATABASE } from '../data/currency.js';
 
 const Currency = () => {
   return (
-    <section className="w-full min-h-screen flex flex-col items-center gap-y-12 py-12">
+    <section className="w-full min-h-screen flex flex-col items-center gap-y-12 py-12" id='currency'>
       <div className="w-full flex flex-col gap-y-2 items-center">
         <h2 className="text-alice">Digital Financial World</h2>
         <h6 className="text-turquoise w-[80%] sm:w-[90%] lg:w-[750px] text-center">
@@ -25,7 +25,7 @@ const Currency = () => {
             >
               <h3>{currencySlider.currencyTitle}</h3>
               <AwesomeSlider
-                className="h-[250px] sm:h-[200px] border-turquoise border-[2px]"
+                className="h-[200px] border-turquoise border-[2px]"
                 bullets={false}
                 mobileTouch={true}
                 organicArrows={false}

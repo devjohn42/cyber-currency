@@ -4,7 +4,7 @@ import BoxValue from './global/Boxes/HomeBox/BoxValue';
 
 const Home = () => {
   return (
-    <section className="home-section">
+    <section className="home-section" id='home'>
       <span className="hidden sm:flex title">Cyber Currency Center</span>
       <div className="flex flex-col gap-y-3 md:gap-y-6 items-center">
         <h1>Discover the most famous cyber economy systems</h1>

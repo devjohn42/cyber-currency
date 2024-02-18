@@ -1,10 +1,24 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaCoins } from 'react-icons/fa6';
 import { MdOutlineApps, MdClose } from 'react-icons/md';
 import { NavLink } from 'react-router-dom';
+import { Link } from 'react-scroll';
 
 const Header = () => {
   const [changeNav, setChangeNav] = useState(false);
+  const handleCloseNav = () => {
+    setChangeNav(false);
+  };
+
+  const watchingResize = () => {
+    if (window.innerWidth >= 1024) {
+      setNavOpen(false);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener('resize', watchingResize);
+    // console.log(window.innerWidth)
+  }, []);
   return (
     <header>
       <div className="w-full flex items-center justify-around">
@@ -29,21 +43,66 @@ const Header = () => {
 
         <div className="hidden md:flex">
           <nav className="flex flex-col md:flex-row md:gap-x-5">
-            <a className="header-nav-link" href="">
+            <Link
+              className="header-nav-link"
+              to="home"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={1000}
+              delay={200}
+              isDynamic={true}
+            >
               Home
-            </a>
-            <a className="header-nav-link" href="">
+            </Link>
+            <Link
+              className="header-nav-link"
+              to="about"
+              spy={true}
+              smooth={true}
+              offset={-40}
+              duration={1000}
+              delay={200}
+              isDynamic={true}
+            >
               About
-            </a>
-            <a className="header-nav-link" href="">
+            </Link>
+            <Link
+              className="header-nav-link"
+              to="market"
+              spy={true}
+              smooth={true}
+              offset={-60}
+              duration={1000}
+              delay={200}
+              isDynamic={true}
+            >
               Market
-            </a>
-            <a className="header-nav-link" href="">
+            </Link>
+            <Link
+              className="header-nav-link"
+              to="currency"
+              spy={true}
+              smooth={true}
+              offset={-60}
+              duration={1000}
+              delay={200}
+              isDynamic={true}
+            >
               Currency
-            </a>
-            <a className="header-nav-link" href="">
+            </Link>
+            <Link
+              className="header-nav-link"
+              to="faq"
+              spy={true}
+              smooth={true}
+              offset={-90}
+              duration={1000}
+              delay={200}
+              isDynamic={true}
+            >
               FAQ
-            </a>
+            </Link>
           </nav>
         </div>
         <div className="w-[70px] flex justify-center">
@@ -66,21 +125,77 @@ const Header = () => {
               : 'flex flex-col gap-y-5 items-center h-0 opacity-0'
           }`}
         >
-          <a className="header-nav-link" href="">
+          <Link
+            className="header-nav-link"
+            to="home"
+            spy={true}
+            smooth={true}
+            offset={0}
+            duration={1000}
+            delay={200}
+            isDynamic={true}
+            onClick={handleCloseNav}
+          >
             Home
-          </a>
-          <a className="header-nav-link" href="">
+          </Link>
+          <Link
+            className="header-nav-link"
+            to="about"
+            spy={true}
+            smooth={true}
+            offset={
+              window.innerWidth >= 768 || window.innerWidth >= 480 ? -30 : -90
+            }
+            duration={1000}
+            delay={200}
+            isDynamic={true}
+            onClick={handleCloseNav}
+          >
             About
-          </a>
-          <a className="header-nav-link" href="">
+          </Link>
+          <Link
+            className="header-nav-link"
+            to="market"
+            spy={true}
+            smooth={true}
+            offset={-45}
+            duration={1000}
+            delay={200}
+            isDynamic={true}
+            onClick={handleCloseNav}
+          >
             Market
-          </a>
-          <a className="header-nav-link" href="">
+          </Link>
+          <Link
+            className="header-nav-link"
+            to="currency"
+            spy={true}
+            smooth={true}
+            offset={
+              window.innerWidth >= 768 || window.innerWidth >= 480 ? -60 : -45
+            }
+            duration={1000}
+            delay={200}
+            isDynamic={true}
+            onClick={handleCloseNav}
+          >
             Currency
-          </a>
-          <a className="header-nav-link" href="">
+          </Link>
+          <Link
+            className="header-nav-link"
+            to="faq"
+            spy={true}
+            smooth={true}
+            offset={
+              window.innerWidth >= 768 || window.innerWidth >= 480 ? -80 : -60
+            }
+            duration={1000}
+            delay={200}
+            isDynamic={true}
+            onClick={handleCloseNav}
+          >
             FAQ
-          </a>
+          </Link>
         </nav>
       </div>
     </header>
