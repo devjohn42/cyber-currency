@@ -1,8 +1,10 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { homeAnimations } from '../../../../data/animations';
 
-const Box = ({ children, cursor, border, beforeWidth, afterHeight }) => {
+const Box = ({ delay, children, cursor, border, beforeWidth, afterHeight }) => {
   return (
-    <div
+    <motion.div
       className={`
       w-[150px] h-[50px] 
       sm:w-[220px] sm:h-[60px]
@@ -17,9 +19,10 @@ const Box = ({ children, cursor, border, beforeWidth, afterHeight }) => {
       hover:before:w-[0px] hover:before:bg-transparent
       hover:after:h-[0px] hover:after:bg-transparent
       ${border} border-turquoise`}
+      {...homeAnimations.downToUp(0.6, delay)}
     >
       {children}
-    </div>
+    </motion.div>
   );
 };
 

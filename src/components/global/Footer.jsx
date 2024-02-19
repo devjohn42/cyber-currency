@@ -1,6 +1,6 @@
 import React from 'react';
-import BoxSocial from './Boxes/AboutBox/BoxSocial';
 import DevLink from './DevLink';
+import FooterBoxSocial from './Boxes/FooterBoxSocial';
 import { socialsDATABASE } from '../../data/socials';
 
 const Footer = () => {
@@ -12,14 +12,14 @@ const Footer = () => {
         {socialsDATABASE.map((social, index) => {
           return (
             <DevLink key={index}>
-              <BoxSocial
+              <FooterBoxSocial
                 translate={''}
                 border={'border-[1px] sm:border-[2px]'}
                 beforeWidth={'before:w-[70%]'}
                 afterHeight={'after:h-[60%]'}
               >
                 {social}
-              </BoxSocial>
+              </FooterBoxSocial>
             </DevLink>
           );
         })}

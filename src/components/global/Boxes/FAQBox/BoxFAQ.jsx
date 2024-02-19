@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { MdKeyboardArrowUp } from 'react-icons/md';
+import { motion } from 'framer-motion';
+import { faqAnimations } from '../../../../data/animations';
 
 const BoxFAQ = ({
+  delay,
   title,
   description,
   cursor,
@@ -12,7 +15,7 @@ const BoxFAQ = ({
   onToggle,
 }) => {
   return (
-    <div
+    <motion.div
       className={`
       w-[90%] 
       ${isOpen ? 'h-[180px]' : 'h-[80px]'}
@@ -29,6 +32,7 @@ const BoxFAQ = ({
       ${isOpen ? '' : 'after:w-[100.5%] after:lg:w-[980px]'} ${afterHeight}
       ${isOpen ? 'before:w-[0px] after:h-[0px]' : ''}      
       ${border} border-turquoise`}
+      {...faqAnimations.downToUp(delay, 0.5)}
     >
       <div className=" w-[95%] flex flex-col gap-y-1 items-start text-left">
         <h5 className="text-turquoise font-second font-semibold">{title}</h5>
@@ -48,7 +52,7 @@ const BoxFAQ = ({
         }`}
         onClick={onToggle}
       />
-    </div>
+    </motion.div>
   );
 };
 

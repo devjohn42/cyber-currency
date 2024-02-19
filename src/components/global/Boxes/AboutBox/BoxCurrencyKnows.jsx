@@ -1,6 +1,9 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { aboutAnimations } from '../../../../data/animations';
 
 const BoxCurrencyKnows = ({
+  delay,
   value,
   description,
   cursor,
@@ -8,8 +11,12 @@ const BoxCurrencyKnows = ({
   beforeWidth,
   afterHeight,
 }) => {
+  const animation =
+    window.innerWidth < 1024
+      ? { ...aboutAnimations.downToUp(delay, 0.25) }
+      : { ...aboutAnimations.rightToLeft(delay, 0.5) };
   return (
-    <button
+    <motion.div
       className={`
       w-[90%] h-[170px]
       lg:w-[450px]
@@ -22,6 +29,7 @@ const BoxCurrencyKnows = ({
       hover:before:w-[0px]
       hover:after:h-[0px]
       ${border} border-turquoise`}
+      {...animation}
     >
       <div className="w-[95%] flex flex-col gap-y-1 items-start text-left">
         <h4 className="font-second">{value}</h4>
@@ -29,7 +37,7 @@ const BoxCurrencyKnows = ({
           {description}
         </span>
       </div>
-    </button>
+    </motion.div>
   );
 };
 

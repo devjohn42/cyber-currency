@@ -1,6 +1,9 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { marketAnimations } from '../../../../data/animations';
 
 const BoxMarket = ({
+  delay,
   title,
   description,
   number,
@@ -9,8 +12,12 @@ const BoxMarket = ({
   beforeWidth,
   afterHeight,
 }) => {
+  const animation =
+    window.innerWidth < 1024
+      ? { ...marketAnimations.downToUp(delay, 0.25, 25) }
+      : { ...marketAnimations.leftToRight(delay) };
   return (
-    <div
+    <motion.div
       className={`
       w-[320px] h-[180px]
       sm:w-[380px] sm:h-[200px]
@@ -25,6 +32,7 @@ const BoxMarket = ({
       hover:before:w-[0px]
       hover:after:h-[0px]
       ${border} border-turquoise`}
+      {...animation}
     >
       <div className="w-[95%] flex flex-col gap-y-1 items-start text-left lg:ml-6">
         <h5 className="font-semibold">{title}</h5>
@@ -37,7 +45,7 @@ const BoxMarket = ({
           {number}
         </span>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

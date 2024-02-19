@@ -1,9 +1,6 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { aboutAnimations } from '../../../../data/animations';
 
-const BoxSocial = ({
-  delay,
+const FooterBoxSocial = ({
   children,
   translate,
   border,
@@ -11,7 +8,7 @@ const BoxSocial = ({
   afterHeight,
 }) => {
   return (
-    <motion.button
+    <button
       className={`
       w-[40px] h-[40px]
       sm:w-[50px] sm:h-[50px]
@@ -25,11 +22,10 @@ const BoxSocial = ({
       hover:after:h-[0px] hover:after:bg-transparent
       ${translate}
       ${border} border-turquoise`}
-      {...aboutAnimations.growUp(delay)}
     >
       {children}
-    </motion.button>
+    </button>
   );
 };
 
-export default BoxSocial;
+export default FooterBoxSocial;
