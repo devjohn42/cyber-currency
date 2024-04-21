@@ -12,7 +12,7 @@ const Header = () => {
 
   const watchingResize = () => {
     if (window.innerWidth >= 1024) {
-      setNavOpen(false);
+      setChangeNav(false);
     }
   };
   useEffect(() => {
